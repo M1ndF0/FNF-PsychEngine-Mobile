@@ -182,6 +182,11 @@ class TitleState extends MusicBeatState
 			logoBl.shader = swagShader.shader;
 		}
 		
+				if(SnowThing != null)
+				{
+			SnowThing.animation.play('idle');
+			}
+		
 		gfDance.frames = Paths.getSparrowAtlas(characterImage);
 		if(!useIdle)
 		{
@@ -194,6 +199,7 @@ class TitleState extends MusicBeatState
 			gfDance.animation.addByPrefix('idle', animationName, 24, false);
 			gfDance.animation.play('idle');
 		}
+		
 
 
 		var animFrames:Array<FlxFrame> = [];
@@ -221,16 +227,16 @@ class TitleState extends MusicBeatState
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.antialiasing = ClientPrefs.data.antialiasing;
 		logo.screenCenter();
-
-		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
-		credGroup.add(blackScreen);
 		
 		SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
 		credGroup.add(SnowThing);
 		SnowThing.antialiasing = ClientPrefs.data.antialiasing;			
 		SnowThing.animation.addByPrefix('idle', 'Snow', 24, false);
 		SnowThing.updateHitbox();
-		SnowThing.animation.play('idle');
+
+		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
+		credGroup.add(blackScreen);
+		
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
