@@ -145,7 +145,6 @@ class TitleState extends MusicBeatState
 		#end
 	}
 
-    var SnowThing:FlxSprite;
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
