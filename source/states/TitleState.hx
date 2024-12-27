@@ -232,7 +232,8 @@ class TitleState extends MusicBeatState
 		credGroup.add(SnowThing);
 		SnowThing.antialiasing = ClientPrefs.data.antialiasing;		
 			SnowThing.animation.play('snow rain');
-			SnowThing.animation.addByPrefix('snow rain', 'Snow', 24, true);
+			SnowThing.animation.addByPrefix('snow rain', 'Snow', 24);
+			SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		SnowThing.updateHitbox();
 
 		credTextShit = new Alphabet(0, 0, "", true);
