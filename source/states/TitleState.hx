@@ -580,7 +580,7 @@ class TitleState extends MusicBeatState
 				case 14:
 					addMoreText('FNF');
 				case 15:
-					addMoreText('Drones's Solver');
+					addMoreText('Drones Solver');
 				case 16:
 					addMoreText('Was Begin!'); // credTextShit.text += '\nFunkin';
 
