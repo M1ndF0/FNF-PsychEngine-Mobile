@@ -47,6 +47,7 @@ class TitleState extends MusicBeatState
 	var credGroup:FlxGroup = new FlxGroup();
 	var textGroup:FlxGroup = new FlxGroup();
 	var blackScreen:FlxSprite;
+	var SnowThing:FlxSprite;
 	var credTextShit:Alphabet;
 	var ngSpr:FlxSprite;
 	
@@ -218,8 +219,15 @@ class TitleState extends MusicBeatState
 		logo.antialiasing = ClientPrefs.data.antialiasing;
 		logo.screenCenter();
 
-		blackScreen = new FlxSprite().loadGraphic(Paths.image('menuBG'));
+		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
 		credGroup.add(blackScreen);
+		
+		SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
+		credGroup.add(SnowThing);		
+		
+		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
+		SnowThing.animation.play('snow');
+		SnowThing.updateHitbox();
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
