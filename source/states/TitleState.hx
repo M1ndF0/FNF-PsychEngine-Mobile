@@ -226,13 +226,11 @@ class TitleState extends MusicBeatState
 		
 		SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
 		credGroup.add(SnowThing);	
-SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		SnowThing.antialiasing = ClientPrefs.data.antialiasing;	
 		
 		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
 		SnowThing.animation.play('snow');
 		SnowThing.updateHitbox();
-					SnowThing.animation.play('snow', true);
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
@@ -244,6 +242,7 @@ SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		ngSpr.updateHitbox();
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = ClientPrefs.data.antialiasing;
+		
 
         add(SnowThing);
 		add(gfDance);
@@ -371,6 +370,10 @@ SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 
 	override function update(elapsed:Float)
 	{
+	
+		if(SnowThing != null)
+			SnowThing.animation.play('SnowThing', true);
+			
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
