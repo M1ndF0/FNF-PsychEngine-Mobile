@@ -162,6 +162,14 @@ class TitleState extends MusicBeatState
 		loadJsonData();
 		#if TITLE_SCREEN_EASTER_EGG easterEggData(); #end
 		Conductor.bpm = musicBPM;
+		
+			SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
+		credGroup.add(SnowThing);	
+		SnowThing.antialiasing = ClientPrefs.data.antialiasing;	
+		
+		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
+		SnowThing.animation.play('snow');
+		SnowThing.updateHitbox();
 
 		logoBl = new FlxSprite(logoPosition.x, logoPosition.y);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
@@ -224,13 +232,6 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
 		credGroup.add(blackScreen);
 		
-		SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
-		credGroup.add(SnowThing);	
-		SnowThing.antialiasing = ClientPrefs.data.antialiasing;	
-		
-		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
-		SnowThing.animation.play('snow');
-		SnowThing.updateHitbox();
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
