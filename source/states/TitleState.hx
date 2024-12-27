@@ -75,7 +75,6 @@ class TitleState extends MusicBeatState
 		Paths.clearStoredMemory();
 		super.create();
 		Paths.clearUnusedMemory();
-		
 
 		if(!initialized)
 		{
@@ -84,8 +83,6 @@ class TitleState extends MusicBeatState
 		}
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
-		SnowThing.animation.play('snow rain');
-			SnowThing.animation.addByPrefix('snow rain', 'Snow', 24);
 
 		#if CHECK_FOR_UPDATES
 		if(ClientPrefs.data.checkForUpdates && !closedState) {
@@ -231,10 +228,12 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
 		credGroup.add(blackScreen);
 		
-				SnowThing = new FlxSprite().loadGraphic(Paths.image('logoBumpin'));
+				SnowThing = new FlxSprite().loadGraphic(Paths.image('rainingsnow'));
 		credGroup.add(SnowThing);
 		SnowThing.antialiasing = ClientPrefs.data.antialiasing;		
-			SnowThing.frames = Paths.getSparrowAtlas('raining snow');
+			SnowThing.animation.play('snowrain');
+			SnowThing.animation.addByPrefix('snowrain', 'Snow', 24);
+			SnowThing.frames = Paths.getSparrowAtlas('rainingsnow');
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
