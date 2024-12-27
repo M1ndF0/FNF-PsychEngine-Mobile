@@ -228,7 +228,7 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
 		credGroup.add(blackScreen);
 		
-				SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
+				SnowThing = new FlxSprite().loadGraphic(Paths.image('logoBumpin'));
 		credGroup.add(SnowThing);
 		SnowThing.antialiasing = ClientPrefs.data.antialiasing;		
 			SnowThing.animation.play('snow rain');
