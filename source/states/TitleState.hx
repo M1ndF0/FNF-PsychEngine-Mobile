@@ -185,6 +185,7 @@ class TitleState extends MusicBeatState
 				if(SnowThing != null)
 				{
 			SnowThing.animation.play('idle');
+			SnowThing.animation.addByPrefix('snow rain', 'Snow', 24, false);
 			}
 		
 		gfDance.frames = Paths.getSparrowAtlas(characterImage);
@@ -228,15 +229,14 @@ class TitleState extends MusicBeatState
 		logo.antialiasing = ClientPrefs.data.antialiasing;
 		logo.screenCenter();
 		
-		SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
-		credGroup.add(SnowThing);
-		SnowThing.antialiasing = ClientPrefs.data.antialiasing;			
-		SnowThing.animation.addByPrefix('idle', 'Snow', 24, false);
-		SnowThing.updateHitbox();
 
 		blackScreen = new FlxSprite().loadGraphic(Paths.image('blur menu'));
 		credGroup.add(blackScreen);
 		
+				SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
+		credGroup.add(SnowThing);
+		SnowThing.antialiasing = ClientPrefs.data.antialiasing;			
+		SnowThing.updateHitbox();
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
