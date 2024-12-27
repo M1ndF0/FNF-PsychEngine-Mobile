@@ -218,16 +218,14 @@ class TitleState extends MusicBeatState
 		logo.antialiasing = ClientPrefs.data.antialiasing;
 		logo.screenCenter();
 
-		blackScreen = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
-		blackScreen.scale.set(FlxG.width, FlxG.height);
-		blackScreen.updateHitbox();
+		blackScreen = new FlxSprite().loadGraphic(Paths.image('menuBG'));
 		credGroup.add(blackScreen);
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('daveybird'));
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
 		ngSpr.updateHitbox();
@@ -531,6 +529,7 @@ class TitleState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -565,9 +564,9 @@ class TitleState extends MusicBeatState
 				case 5:
 					deleteCoolText();
 				case 6:
-					createCoolText(['Not associated', 'with'], -40);
+					createCoolText(['Mod Created By', 'with'], -40);
 				case 8:
-					addMoreText('newgrounds', -40);
+					addMoreText('This Guys', -40);
 					ngSpr.visible = true;
 				case 9:
 					deleteCoolText();
@@ -579,11 +578,11 @@ class TitleState extends MusicBeatState
 				case 13:
 					deleteCoolText();
 				case 14:
-					addMoreText('Friday');
+					addMoreText('FNF');
 				case 15:
-					addMoreText('Night');
+					addMoreText('Drones's Solver');
 				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+					addMoreText('Was Begin!'); // credTextShit.text += '\nFunkin';
 
 				case 17:
 					skipIntro();
