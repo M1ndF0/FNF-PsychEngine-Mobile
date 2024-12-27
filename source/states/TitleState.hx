@@ -234,7 +234,6 @@ class TitleState extends MusicBeatState
 			SnowThing.animation.play('snow rain');
 			SnowThing.animation.addByPrefix('snow rain', 'Snow', 24);
 			SnowThing.frames = Paths.getSparrowAtlas('raining snow');
-		SnowThing.updateHitbox();
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
