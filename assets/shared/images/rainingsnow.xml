@@ -2,8 +2,8 @@
 <TextureAtlas imagePath="rainingsnow.png">
 	<!-- Created using the Spritesheet and XML generator -->
 	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="Snow0000" x="0" y="724" width="1278" height="724" frameX="-4" frameY="2" frameWidth="1280" frameHeight="720"/>
-	<SubTexture name="Snow0001" x="0" y="0" width="1284" height="724" frameX="2" frameY="2" frameWidth="1280" frameHeight="720"/>
-	<SubTexture name="Snow0002" x="1284" y="0" width="1284" height="724" frameX="2" frameY="2" frameWidth="1280" frameHeight="720"/>
-	<SubTexture name="Snow0003" x="1278" y="724" width="1215" height="724" frameX="-67" frameY="2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="rainloop0000" x="0" y="724" width="1278" height="724" frameX="-4" frameY="2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="rainloop0001" x="0" y="0" width="1284" height="724" frameX="2" frameY="2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="rainloop0002" x="1284" y="0" width="1284" height="724" frameX="2" frameY="2" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="rainloop0003" x="1278" y="724" width="1215" height="724" frameX="-67" frameY="2" frameWidth="1280" frameHeight="720"/>
 </TextureAtlas>
