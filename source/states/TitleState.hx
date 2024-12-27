@@ -371,8 +371,6 @@ class TitleState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 	
-		if(SnowThing != null)
-			SnowThing.animation.play('SnowThing', true);
 			
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
@@ -566,6 +564,7 @@ class TitleState extends MusicBeatState
 		}
 
 		if(!closedState)
+			SnowThing.animation.play('SnowThing', true);
 		{
 			sickBeats++;
 			switch (sickBeats)
@@ -613,6 +612,7 @@ class TitleState extends MusicBeatState
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
+			SnowThing.animation.play('SnowThing', true);
 		{
 			#if TITLE_SCREEN_EASTER_EGG
 			if (playJingle) //Ignore deez
