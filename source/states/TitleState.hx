@@ -157,8 +157,6 @@ class TitleState extends MusicBeatState
 		if (!initialized && FlxG.sound.music == null)
 			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 			
-			if(SnowThing != null)
-			SnowThing.animation.play('snow', true);
 			
 
 		loadJsonData();
@@ -234,6 +232,7 @@ SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
 		SnowThing.animation.play('snow');
 		SnowThing.updateHitbox();
+					SnowThing.animation.play('snow', true);
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
