@@ -227,7 +227,7 @@ class TitleState extends MusicBeatState
 SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		SnowThing.antialiasing = ClientPrefs.data.antialiasing;	
 		
-		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
+		SnowThing.animation.addByPrefix('snow', 'Snow', 20, false);
 		SnowThing.animation.play('snow');
 		SnowThing.updateHitbox();
 
@@ -248,6 +248,9 @@ SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		add(titleText); //"Press Enter to Begin" text
 		add(credGroup);
 		add(ngSpr);
+		
+					if(SnowThing != null)
+			SnowThing.animation.play('snow', true);
 
 		if (initialized)
 			skipIntro();
@@ -545,8 +548,6 @@ SnowThing.frames = Paths.getSparrowAtlas('raining snow');
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
 			
-			if(SnowThing != null)
-			SnowThing.animation.play('snow', true);
 
 		if(gfDance != null)
 		{
