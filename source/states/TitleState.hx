@@ -44,10 +44,10 @@ class TitleState extends MusicBeatState
 
 	public static var initialized:Bool = false;
 
+    var SnowThing:FlxSprite;
 	var credGroup:FlxGroup = new FlxGroup();
 	var textGroup:FlxGroup = new FlxGroup();
 	var blackScreen:FlxSprite;
-	var SnowThing:FlxSprite;
 	var credTextShit:Alphabet;
 	var ngSpr:FlxSprite;
 	
@@ -145,6 +145,7 @@ class TitleState extends MusicBeatState
 		#end
 	}
 
+    var SnowThing:FlxSprite;
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
@@ -240,6 +241,7 @@ class TitleState extends MusicBeatState
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = ClientPrefs.data.antialiasing;
 
+        add(SnowThing);
 		add(gfDance);
 		add(logoBl); //FNF Logo
 		add(titleText); //"Press Enter to Begin" text
@@ -541,6 +543,9 @@ class TitleState extends MusicBeatState
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
+			
+			f(SnowThing != null)
+			SnowThing.animation.play('snow', true);
 
 		if(gfDance != null)
 		{
