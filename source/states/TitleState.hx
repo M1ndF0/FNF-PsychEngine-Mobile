@@ -544,7 +544,7 @@ class TitleState extends MusicBeatState
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
 			
-			f(SnowThing != null)
+			if(SnowThing != null)
 			SnowThing.animation.play('snow', true);
 
 		if(gfDance != null)
