@@ -223,7 +223,9 @@ class TitleState extends MusicBeatState
 		credGroup.add(blackScreen);
 		
 		SnowThing = new FlxSprite().loadGraphic(Paths.image('raining snow'));
-		credGroup.add(SnowThing);		
+		credGroup.add(SnowThing);	
+SnowThing.frames = Paths.getSparrowAtlas('raining snow');
+		SnowThing.antialiasing = ClientPrefs.data.antialiasing;	
 		
 		SnowThing.animation.addByPrefix('snow', 'Snow', 24, false);
 		SnowThing.animation.play('snow');
