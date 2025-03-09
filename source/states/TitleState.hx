@@ -202,7 +202,7 @@ class TitleState extends MusicBeatState
 		
 				
     
-    secondbg = new FlxSprite(0,-900).loadGraphic(Paths.image('secondbg'));
+    secondbg = new FlxSprite(0,900).loadGraphic(Paths.image('secondbg'));
 		add(secondbg);
 		secondbg.screenCenter(FlxAxes.X);
 
@@ -583,8 +583,8 @@ class TitleState extends MusicBeatState
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
-		FlxTween.tween(secondbg, {y: secondbg.y - 0}, 1.5, {ease: FlxEase.expoOut});
-		FlxTween.tween(logoBl, {y: logoBl.y - 0}, 2.5, {ease: FlxEase.expoOut});
+		FlxTween.tween(secondbg, {y: secondbg.y - 900}, 1.5, {ease: FlxEase.expoOut});
+		FlxTween.tween(logoBl, {y: logoBl.y - 900}, 2, {ease: FlxEase.expoOut});
 									gfDance.visible = true;
 						logoBl.visible = true;
 						titleText.visible = true;
