@@ -193,8 +193,7 @@ class TitleState extends MusicBeatState
 		add(FLASH);
 		FLASH.alpha = 0;
 		
-		tilesThing = new FlxBackdrop(Paths.image('menus/title/checker'));
-    tilesThing.antialiasing = Options.antialiasing;
+		tilesThing = new FlxBackdrop(Paths.image('checker'));
     tilesThing.scrollFactor.set(0,0);
     tilesThing.velocity.set(100,100);
     tilesThing.alpha = 0.15;
