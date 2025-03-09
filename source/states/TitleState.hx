@@ -186,20 +186,24 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 
-	blackScreen = new FlxSprite().loadGraphic(Paths.image('FRBG'));
-		credGroup.add(blackScreen);
-		
 		FLASH = new FlxSprite().loadGraphic(Paths.image('FLASH'));
 		add(FLASH);
 		FLASH.alpha = 0;
 		
-		tilesThing = new FlxBackdrop(Paths.image('checker'));
+						tilesThing = new FlxBackdrop(Paths.image('checker'));
     tilesThing.scrollFactor.set(0,0);
     tilesThing.velocity.set(100,100);
     tilesThing.alpha = 0.15;
     tilesThing.scale.set(0.7, 0.7);
     tilesThing.updateHitbox(); 
     add(tilesThing);
+		
+	blackScreen = new FlxSprite().loadGraphic(Paths.image('FRBG'));
+		credGroup.add(blackScreen);
+				
+    
+    secondbg = new FlxSprite().loadGraphic(Paths.image('secondbg'));
+		add(secondbg);
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
@@ -217,6 +221,7 @@ class TitleState extends MusicBeatState
 		add(titleText); //"Press Enter to Begin" text
 		add(credGroup);
 		add(ngSpr);
+		
 
 		if (initialized)
 			skipIntro();
@@ -507,7 +512,7 @@ class TitleState extends MusicBeatState
 		super.beatHit();
 		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 		
-		FlxTween.tween(FLASH, {alpha: 1}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FLASH, {alpha: 1}, 2.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
