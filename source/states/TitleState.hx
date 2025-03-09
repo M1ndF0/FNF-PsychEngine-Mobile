@@ -46,7 +46,6 @@ class TitleState extends MusicBeatState
 
 	var credGroup:FlxGroup = new FlxGroup();
 	var textGroup:FlxGroup = new FlxGroup();
-	var blackScreen:FlxSprite;
 		var secondbg:FlxSprite;
 	var credTextShit:Alphabet;
 	var ngSpr:FlxSprite;
@@ -199,8 +198,6 @@ class TitleState extends MusicBeatState
     tilesThing.updateHitbox(); 
     add(tilesThing);
 		
-	blackScreen = new FlxSprite().loadGraphic(Paths.image('FRBG'));
-		credGroup.add(blackScreen);
 				
     
     secondbg = new FlxSprite().loadGraphic(Paths.image('secondbg'));
@@ -222,6 +219,10 @@ class TitleState extends MusicBeatState
 		add(titleText); //"Press Enter to Begin" text
 		add(credGroup);
 		add(ngSpr);
+				gfDance.visible = false;
+						logoBl.visible = false;
+						titleText.visible = false;
+								secondbg.visible = false;
 		
 
 		if (initialized)
@@ -513,7 +514,7 @@ class TitleState extends MusicBeatState
 		super.beatHit();
 		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 		
-		FlxTween.tween(FLASH, {alpha: 1}, 2.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FLASH, {alpha: 1}, 2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -604,6 +605,10 @@ class TitleState extends MusicBeatState
 						remove(ngSpr);
 						remove(credGroup);
 						FlxG.camera.flash(FlxColor.WHITE, 2);
+													gfDance.visible = true;
+						logoBl.visible = true;
+						titleText.visible = true;
+								secondbg.visible = true;
 						skippedIntro = true;
 
 						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
