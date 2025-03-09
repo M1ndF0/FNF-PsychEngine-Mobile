@@ -1,4 +1,4 @@
-package states;
+package;
 
 #if desktop
 import sys.thread.Thread;
