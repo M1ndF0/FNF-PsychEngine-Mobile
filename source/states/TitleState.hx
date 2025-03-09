@@ -514,7 +514,7 @@ class TitleState extends MusicBeatState
 		super.beatHit();
 		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 		
-		FlxTween.tween(FLASH, {alpha: 1}, 2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FLASH, {alpha: 1}, 1.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -563,11 +563,11 @@ class TitleState extends MusicBeatState
 				case 13:
 					deleteCoolText();
 				case 14:
-					addMoreText('Friday');
+					addMoreText('FNF');
 				case 15:
-					addMoreText('Night');
+					addMoreText('Friendly');
 				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+					addMoreText('Rhythm'); // credTextShit.text += '\nFunkin';
 
 				case 17:
 					skipIntro();
@@ -580,6 +580,10 @@ class TitleState extends MusicBeatState
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
+									gfDance.visible = true;
+						logoBl.visible = true;
+						titleText.visible = true;
+								secondbg.visible = true;
 		{
 			#if TITLE_SCREEN_EASTER_EGG
 			if (playJingle) //Ignore deez
@@ -605,10 +609,6 @@ class TitleState extends MusicBeatState
 						remove(ngSpr);
 						remove(credGroup);
 						FlxG.camera.flash(FlxColor.WHITE, 2);
-													gfDance.visible = true;
-						logoBl.visible = true;
-						titleText.visible = true;
-								secondbg.visible = true;
 						skippedIntro = true;
 
 						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
