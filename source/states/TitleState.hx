@@ -122,7 +122,7 @@ class TitleState extends MusicBeatState
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
-		var blackScreen:FlxSprite;
+		var FLASH:FlxSprite;
 
 	function startIntro()
 	{
@@ -188,9 +188,9 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		
-		blackScreen = new FlxSprite().loadGraphic(Paths.image('FLASH'));
-		credGroup.add(blackScreen);
-		blackscreen.alpha = 0;
+		FLASH = new FlxSprite().loadGraphic(Paths.image('FLASH'));
+		credGroup.add(FLASH);
+		FLASH.alpha = 0;
 
 		
 						tilesThing = new FlxBackdrop(Paths.image('checker'));
@@ -518,7 +518,7 @@ class TitleState extends MusicBeatState
 		super.beatHit();
 		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 		
-		FlxTween.tween(blackscreen, {alpha: 1}, 1.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FLASH, {alpha: 1}, 1.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -585,7 +585,7 @@ class TitleState extends MusicBeatState
 	{
 		if (!skippedIntro)
 		FlxTween.tween(secondbg, {y: secondbg.y - 0}, 1.5, {ease: FlxEase.expoOut});
-		FlxTween.tween(logoBI, {y: logoBI.y - 0}, 2.5, {ease: FlxEase.expoOut});
+		FlxTween.tween(logoBl, {y: logoBl.y - 0}, 2.5, {ease: FlxEase.expoOut});
 									gfDance.visible = true;
 						logoBl.visible = true;
 						titleText.visible = true;
