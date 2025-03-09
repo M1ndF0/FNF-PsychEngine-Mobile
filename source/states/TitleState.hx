@@ -8,6 +8,7 @@ import flixel.graphics.frames.FlxFrame;
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
 import haxe.Json;
+import flixel.util.FlxAxes;
 
 import openfl.Assets;
 import openfl.display.Bitmap;
@@ -121,6 +122,7 @@ class TitleState extends MusicBeatState
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
+		var blackScreen:FlxSprite;
 
 	function startIntro()
 	{
@@ -185,10 +187,11 @@ class TitleState extends MusicBeatState
 		}
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
+		
+		blackScreen = new FlxSprite().loadGraphic(Paths.image('FLASH'));
+		credGroup.add(blackScreen);
+		blackscreen.alpha = 0;
 
-		FLASH = new FlxSprite().loadGraphic(Paths.image('FLASH'));
-		add(FLASH);
-		FLASH.alpha = 0;
 		
 						tilesThing = new FlxBackdrop(Paths.image('checker'));
     tilesThing.scrollFactor.set(0,0);
@@ -200,8 +203,9 @@ class TitleState extends MusicBeatState
 		
 				
     
-    secondbg = new FlxSprite().loadGraphic(Paths.image('secondbg'));
+    secondbg = new FlxSprite(0,-900).loadGraphic(Paths.image('secondbg'));
 		add(secondbg);
+		secondbg.screenCenter(FlxAxes.X);
 
 		credTextShit = new Alphabet(0, 0, "", true);
 		credTextShit.screenCenter();
@@ -514,7 +518,7 @@ class TitleState extends MusicBeatState
 		super.beatHit();
 		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 		
-		FlxTween.tween(FLASH, {alpha: 1}, 1.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(blackscreen, {alpha: 1}, 1.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -580,6 +584,8 @@ class TitleState extends MusicBeatState
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
+		FlxTween.tween(secondbg, {y: secondbg.y - 0}, 1.5, {ease: FlxEase.expoOut});
+		FlxTween.tween(logoBI, {y: logoBI.y - 0}, 2.5, {ease: FlxEase.expoOut});
 									gfDance.visible = true;
 						logoBl.visible = true;
 						titleText.visible = true;
@@ -607,7 +613,6 @@ class TitleState extends MusicBeatState
 
 					default: //Go back to normal ugly ass boring GF
 						remove(ngSpr);
-						remove(credGroup);
 						FlxG.camera.flash(FlxColor.WHITE, 2);
 						skippedIntro = true;
 
