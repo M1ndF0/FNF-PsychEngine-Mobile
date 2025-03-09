@@ -47,6 +47,7 @@ class TitleState extends MusicBeatState
 	var credGroup:FlxGroup = new FlxGroup();
 	var textGroup:FlxGroup = new FlxGroup();
 	var blackScreen:FlxSprite;
+		var secondbg:FlxSprite;
 	var credTextShit:Alphabet;
 	var ngSpr:FlxSprite;
 	var FLASH:FlxSprite;
