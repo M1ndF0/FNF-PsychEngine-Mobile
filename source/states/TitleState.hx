@@ -1,6 +1,7 @@
-package;
+package states;
 
 #if desktop
+import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 import flixel.FlxG;
@@ -236,6 +237,7 @@ var FLASH:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 	var titlestatebg:FlxBackdrop;
+	var swagShader:ColorSwap = null;
 
 	function startIntro()
 	{
