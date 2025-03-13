@@ -137,7 +137,7 @@ class TitleState extends MusicBeatState
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = ClientPrefs.data.antialiasing;
 
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+		logoBl.animation.addByPrefix('bump', 'logo bumpin', 28, false);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 
@@ -517,7 +517,7 @@ class TitleState extends MusicBeatState
 		super.beatHit();
 		FlxTween.tween(FlxG.camera, {zoom: 1.065}, 1, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 		
-		FlxTween.tween(FLASH, {alpha: 1}, 1.2, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FLASH, {alpha: 1}, 1.85, {ease: FlxEase.expoOut, type: FlxTween.BACKWARD});
 
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
@@ -583,8 +583,8 @@ class TitleState extends MusicBeatState
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
-		FlxTween.tween(secondbg, {y: secondbg.y - 900}, 1.5, {ease: FlxEase.expoOut});
-		FlxTween.tween(logoBl, {y: logoBl.y - 900}, 2, {ease: FlxEase.expoOut});
+		FlxTween.tween(secondbg, {y: secondbg.y - 900}, 2, {ease: FlxEase.expoOut});
+		FlxTween.tween(logoBl, {y: logoBl.y - 900}, 2.5, {ease: FlxEase.expoOut});
 									gfDance.visible = true;
 						logoBl.visible = true;
 						titleText.visible = true;
